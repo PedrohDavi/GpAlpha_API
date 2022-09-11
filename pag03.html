@@ -18,34 +18,36 @@
       <h1>STEPS</h1><h4>10% de 85% de altura</h4> 
     </div>
     <div class="conteudo">   
-      <div class="container">
+      <div class="container-fluid">
         <div class="row align-items-start"> <!-- primeira linha de itens no conteudo -->
           <div class="col"> <!-- Essa div precisa ficar vazia pra não mexer na posição dos grids -->
           </div>
-          <div class="col-6"> <!-- col-6 Pegando uma formatação de grid um pouco maior do que a padrão do modelo utilizado -->
+          <div class="col-6 "> <!-- col-6 Pegando uma formatação de grid um pouco maior do que a padrão do modelo utilizado -->
             <div>
-              <h4 class="centralizartextos">DESCREVA O PROBLEMA:</h4>
+              <h4 class="centralizartextos"><strong>DESCREVA O PROBLEMA:</strong></h4>
               <br>
             </div>
-            <label for="exampleDataList" class="form-label"><strong>Selecione o assunto</strong></label> <!-- chamando formulário com opções -->
+            <label for="exampleDataList" class="form-label textos">Selecione o assunto</label> <!-- chamando formulário com opções -->
               <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Clique aqui para selecionar">
                 <datalist id="datalistOptions">
                   <option value="Máquina não liga">
+                  <option value="Máquina reiniciando">
                   <option value="Rede">
                   <option value="Software">
                   <option value="Periférico">
                   <option value="Outros">
                 </datalist>
           </div>
-          <div class="col"> <!-- Essa div precisa ficar vazia pra não mexer na posição dos grids -->
+          <div class="col "> <!-- Essa div precisa ficar vazia pra não mexer na posição dos grids -->
           </div>
         </div>
         <div class="row align-items-center"> <!-- segunda linha de itens no conteudo -->
           <div class="col"> <!-- Essa div precisa ficar vazia pra não mexer na posição dos grids -->
           </div>
-          <div class="col-6"> <!-- col-6 Pegando uma formatação de grid um pouco maior do que a padrão do modelo utilizado -->
+          <div class="col-6 " > <!-- col-6 Pegando uma formatação de grid um pouco maior do que a padrão do modelo utilizado -->
             <div class="mb-3"> <!-- chamando campo de texto para preenchimento -->
-              <label for="exampleFormControlTextarea1" class="form-label"><strong>Descrição:</strong></label>
+              <br>
+              <label for="exampleFormControlTextarea1" class="form-label textos">Descrição:</label>
               <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Escreva um breve descrição do problema" rows="3"></textarea>
             </div>
           </div>
@@ -56,9 +58,9 @@
           <div class="col"> <!-- Essa div precisa ficar vazia pra não mexer na posição dos grids -->
         
           </div>
-          <div class="col-6"> <!-- col-6 Pegando uma formatação de grid um pouco maior do que a padrão do modelo utilizado -->
+          <div class="col-6" > <!-- col-6 Pegando uma formatação de grid um pouco maior do que a padrão do modelo utilizado -->
             <div class="mb-3"> <!-- Chamando campo  -->
-              <label for="formFileMultiple" class="form-label"><strong>Anexar arquivo:</strong></label>
+              <label for="formFileMultiple" class="form-label textos">Anexar arquivo:</label>
               <input class="form-control" type="file" id="formFileMultiple" multiple>
             </div>
           </div>

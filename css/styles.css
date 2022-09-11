@@ -73,9 +73,13 @@ html, body {
 
   .centralizartextos {
     text-align: center;
+    font-size:1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
   }
  
-  .centralizarcaixas {
-    text-align: justify;
+  .textos {
+    font-size:1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
   }
   

@@ -275,3 +275,18 @@ textarea {
 .common_btns button.btn_done:hover {
   background: #708688;
 }
+
+.menu {
+  display: flex;
+}
+.menu li {
+  margin-left: 10px;
+}
+.menu li a {
+  display: block;
+  margin: auto;
+  padding: 10px;
+}
+.cabeçalho ul {
+  list-style: none;
+}

@@ -290,3 +290,28 @@ textarea {
 .cabeçalho ul {
   list-style: none;
 }
+
+.carrosel {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  min-height: 100vh;
+  box-shadow: 2px 2px 4px black;
+  overflow: hidden;
+  height: 500px;
+  width: 500px;
+}
+
+.container {
+  display: flex;
+  transition: transform 0.5 ease-in-out;
+  transform: translate(0);
+}
+
+img {
+  object-fit: cover;
+  height: 500px;
+  width: 500px;
+}

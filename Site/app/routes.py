@@ -20,6 +20,10 @@ email = Mail(app)
 @app.route('/', methods=['GET','POST'])
 @app.route('/home', methods=['GET','POST'])
 def home():
+        return render_template('home.html')
+
+@app.route('/suporte', methods=['GET','POST'])
+def suporte():
     if request.method == 'POST':
         name = request.form.get('name') # Aonde tem 'name' entra o nome da váriavel, que está dentro do dicionário 'data' do jQuery.js
         mail = request.form.get('mail')

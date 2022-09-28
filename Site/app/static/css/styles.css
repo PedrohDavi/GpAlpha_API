@@ -294,10 +294,9 @@ textarea {
 img {
   object-fit: cover;
   height: 500px;
-  width: 500px;
+  width: auto;
 }
 
-.btn-bd-primary {
+.btn_problema {
   background-color: #708688
-
 }

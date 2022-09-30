@@ -315,7 +315,7 @@ textarea {
 .img_home img {
   display: block;
   width: 100%;
-  max-height: 100%;
-  position: absolute;
-  overflow: hidden;
+  height: 280px;
+  object-fit: cover;
+  margin-bottom: 10%;
 }

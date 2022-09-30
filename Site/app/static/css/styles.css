@@ -28,14 +28,12 @@ header {
 
 main {
   /* background: #dbdbdb;   */
-  background: green;
   height: 85%; 
-  margin: 0px auto;
+  margin: 10% 0 -8% 0;
 }
 
 section {
   /* background: #dbdbdb;   */
-  background: green;
   height: 85%; 
   display: grid;
   grid-template-rows: 10% 90%;
@@ -285,37 +283,45 @@ textarea {
   background: #708688;
 }
 
-.menu {
-  display: flex;
-}
-.menu li {
-  margin-left: 10px;
-}
-.menu li a {
-  display: block;
-  margin: auto;
-  padding: 10px;
-}
-.cabeçalho ul {
-  list-style: none;
-}
-
-.btn_problema {
-  background-color: #708688
-}
-
-
+/* Customização imagem home */
 .img_home {
   height: auto;
   width: 100%;
-  margin: auto;
-  align-items: center;
+  align-items:center;
 }
 
 .img_home img {
   display: block;
   width: 100%;
-  height: 280px;
+  height: 350px;
   object-fit: cover;
-  margin-bottom: 10%;
+}
+
+/* Posicionamento botão home */
+.btn_home {
+  position:relative;
+  text-align:center;
+  color:black;
+  font-size: 1.4rem;
+}
+
+/* Customização do botão home */
+.btn_home button {
+  position:absolute;
+  z-index:1;
+  top:50%;
+  left:50%;
+  width: 15%;               /* largura para o botão */
+  height:20%;              /* altura para o botão */
+  padding:0;
+  margin: 50px 0 0 -500px;
+  border-radius: .5rem;
+  border-color: transparent;
+  opacity: 60%;
+  background:white ;
+}
+
+/* Cor ao selecionar botão */
+.btn_home button:hover {
+  background:#708688;
 }

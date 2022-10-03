@@ -31,6 +31,10 @@ const sizeRooms = {
 const lines = ['firstColumn','tenthColumn','secondColumn','ninthColumn','fifthRow'];
 
 function loadLayout(targetRoom) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOUT DOS COMPUTADORES */
+	
+	/* RESETA O ESTILO DOS COMPUTADORES */
+	document.querySelectorAll('.computerSlot').forEach(pc => {pc.style.visibility = 'visible';});
+
 	for(var currentSize in sizeRooms){ /* FAZ UM LOOP PELOS TAMANHOS DE SALA */
 		sizeRooms[currentSize].forEach(currentRoom => { /* FAZ UM LOOP A PROCURA DA SALA */
 			if(currentRoom === targetRoom){ /* SE ACHOU A SALA */
@@ -50,9 +54,9 @@ function loadLayout(targetRoom) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOU
 const floors = {
 	floor3: [301,302, 303],
 	floor4: [401, 402, 404, 405, 406, 407, 408, 409, 411, 412]
-}
+};
 
-function selectOptionCreate(targetFloor) { /* FUNÇÃO QUE CRIA AS OPÇÕES DE SALA, PARA CADA ESCOLHA DE ANDAR */
+function loadRooms(targetFloor) { /* FUNÇÃO QUE CRIA AS OPÇÕES DE SALA, PARA CADA ESCOLHA DE ANDAR */
 
 	var dataList = document.getElementById('datalistOptionsRoom');
 	
@@ -68,10 +72,11 @@ function selectOptionCreate(targetFloor) { /* FUNÇÃO QUE CRIA AS OPÇÕES DE S
 			option.value = room;
 			dataList.appendChild(option);
 		});
-	} else { /* SE APAGOU A ESCOLHA DO ANDAR, APAGA A LISTA DE SALAS */
+	} else { /* SE APAGOU A ESCOLHA DO ANDAR, APAGA A LISTA DE SALAS */			
+		document.getElementById('c1_Room').value = ''; /* APAGA O INPUT DA SALA */
 		dataList.innerHTML = '';
 	};
-}
+};
 
 form_1_next_btn.addEventListener("click", function(){
 

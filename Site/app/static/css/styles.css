@@ -1,5 +1,6 @@
 html, body {
-  height: 100%;  
+  height: 100%;
+  width: 100%;
 }
 
 body {
@@ -8,7 +9,9 @@ body {
 }
 
 h4 {
-  font-weight: bold;
+  font-weight: bold;  
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -17,6 +20,8 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 15%;
+  width: 100%;
+  margin: 0;
   padding: 0px 30px;
 }
 
@@ -27,28 +32,76 @@ header {
 
 section {
   background: #dbdbdb;  
-  height: 85%; 
   display: grid;
   grid-template-rows: 10% 90%;
-  width: 70%;
+  height: 85%; /* 85% do body */
+  width: 70%; /* 70% do body */
   margin: 0px auto;
+  padding: 0;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 70%; /* 70% do section */
+  margin: 0px auto;
+  padding: 0;
 }
 
 .formEmail {
   display: grid;
-  grid-template-rows: 83% 17%;
-  width: 100%;
-  margin: 0px auto;
-}
-
-.conteudo {
+  grid-template-rows: 83% 17%; 
   height: 100%;
-  width: 70%;
-  margin: auto;
+  width: 70%; /* 70% do section */
+  margin: 0px auto;
+  padding: 0;
 }
 
-.botoes {
-  margin: auto 0;
+.content {
+  height: 100%;
+  width: 70%; /* 70% do formEmail */
+  margin: 0 auto;
+  padding: 5% 5% 0;
+}
+
+.content h4 {
+  text-align: center;
+}
+
+.form_1.data_info,
+.form_2.data_info,
+.form_3.data_info,
+.form_4.data_info {
+  height: 100%;
+  width: 100%; /* 100% do content */
+  margin: 0;
+  padding: 0;
+}
+
+.success {
+  text-align: center;
+}
+
+.success img{
+  height: auto;
+  width: 15%;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 70%; /* 70% do formEmail */
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.buttons_wrapper {
+  height: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 footer {
@@ -79,53 +132,27 @@ footer {
   color: white;
 }
 
-.pag4 {
-  text-align: center;
-}
-
-.pag4 img {
-  height: auto;
-  width: 10%;
-}
-
-.col-6 {
-  min-width: 70%;
-  margin: 0 auto;
-}
-
-.col-6 h4 {
-  text-align: center;
-}
-
-/* Posicionamento etapas */
-.wrapper {
-  width: 100px;
-  max-width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 0px auto;
-}
-
-.header {
-  margin: auto 0;
+/* Posicionamento steps */
+.steps_wrapper {
   height: 40px;
+  margin: 0 auto;
+  padding: 0;
 }
 
-/* Quebra linha etapas */
-.header ul {
+/* Quebra linha steps */
+.steps_wrapper ul {
   display: flex;
   list-style: none;
 }
 
-/* Distanciamento etapas */
-.header ul li {
+/* Distanciamento steps */
+.steps_wrapper ul li {
   margin-right: 50px;
   position: relative;
 }
 
 /* Criação linhas das */
-.header ul li:before {
+.steps_wrapper ul li:before {
   content: "";
   position: absolute;
   top: 35%;
@@ -135,18 +162,18 @@ footer {
   background: #abd7db;
 }
 
-/* Limite etapas */
-.header ul li:last-child:before {
+/* Limite steps */
+.steps_wrapper ul li:last-child:before {
   display: none;
 }
 
-/* Encaixe etapas */
-.header ul li div {
+/* Encaixe steps */
+.steps_wrapper ul li div {
   border-radius: 50%;
 }
 
-/* Custumização etapas */
-.header ul li p {
+/* Custumização steps */
+.steps_wrapper ul li p {
   width: 40px;
   height: 40px;
   background: #abd7db;
@@ -156,77 +183,89 @@ footer {
   border-radius: 50%;
 }
 
-/* Cor etapas (linhas) */
-.header ul li.active:before {
+/* Cor steps (linhas) */
+.steps_wrapper ul li.active:before {
   background: #708688;
 }
 
-/* Cor etapas (bolas) */
-.header ul li.active p {
+/* Cor steps (bolas) */
+.steps_wrapper ul li.active p {
   background: #708688;
 }
 
-.form_wrap {
-  margin-top: 5%;
+.layout_computers {  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10%;
+  height: 72%; /* 72% do form_2 data_info */
+  width: 100%;
+  border-radius: 6px;
+  margin: auto 0;
+  padding: 0;
 }
 
-.btn-group {
-  display: flex;
-  justify-content: space-between;
+.leftSide,
+.rightSide {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  column-gap: 2%;
+  row-gap: 5%;
+  border-radius: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.computerSlot {
+  display: flex;  
+  align-items: center;
+  border-radius: 6px;
+  min-height: 100%;
+}
+
+/* 
+.slot_4x4 label{
+  visibility: hidden;
+}
+
+.slot_4x4 {
+  border: 1px solid #212529; ### ESSA É A COR PADRÃO DA BORDA DO BOOTSTRAP 
+}
+*/
+
+/* Label dos computadores (dentro tem 'a' e o 'svg') */
+.btn { 
+  font-size: 1.6vh;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.btn a {
+  display: block;
+  height: auto;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;  
+}
+
+.btn svg{
+  height: auto;
+  width: 80%;
   margin: 0 auto;
   padding: 0;
 }
 
-.gridPC {
-  width: 80%;
-  display: grid;
-  grid-template-rows: 20% 20% 20% 20% 20%;
-  margin: auto;
-}
-
-.fileira1,
-.fileira2,
-.fileira3,
-.fileira4,
-.fileira5 {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 2px 5px;
-}
-
-.esquerda,
-.direita{ 
-  width: 45%;
-  padding: 0.5% 0;
-}
-
-.fileira1.esquerda,
-.fileira1.direita {
-  justify-content: end;
-  align-items: center;
-  padding-right: 2%;
-}
-
-/* Label dos computadores (dentro tem 'a' e o 'svg') */
-.btn-outline-dark { 
-  height: 100%;
-  width: 20%;
-  padding: 2% 0;
-}
-
-.btn-outline-dark svg{
+.porta {
   height: auto;
-  width: 75%;
+  width: 100%;
+  margin: auto auto;
+  padding: 0;
 }
 
 textarea {
   resize: none;
-}
-
-/* Pocisionamento botões */
-.btns_wrap {
-  width: 48%;
-  margin: auto;
 }
 
 /* Posicionamento botões */
@@ -267,7 +306,6 @@ textarea {
 .common_btns button.btn_done {  
   background: #b5e4e8;
 }
-
 
 /* Cor ao selecionar botão */
 .common_btns button.btn_next:hover,

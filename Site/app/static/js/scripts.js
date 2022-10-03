@@ -57,15 +57,15 @@ function selectOptionCreate(targetFloor) { /* FUNÇÃO QUE CRIA AS OPÇÕES DE S
 	var dataList = document.getElementById('datalistOptionsRoom');
 	
 	if (targetFloor === '3º Andar') {
-		floors.floor3.forEach(floor => {
+		floors.floor3.forEach(room => {
 			var option = document.createElement('option');
-			option.value = floor;
+			option.value = room;
 			dataList.appendChild(option);
 		});
 	} else if (targetFloor === '4º Andar') {
-		floors.floor4.forEach(floor => {
+		floors.floor4.forEach(room => {
 			var option = document.createElement('option');
-			option.value = floor;
+			option.value = room;
 			dataList.appendChild(option);
 		});
 	} else { /* SE APAGOU A ESCOLHA DO ANDAR, APAGA A LISTA DE SALAS */

@@ -30,10 +30,10 @@ const sizeRooms = {
 
 const lines = ['firstColumn','tenthColumn','secondColumn','ninthColumn','fifthRow'];
 
-function loadLayout(target) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOUT DOS COMPUTADORES */
+function loadLayout(targetRoom) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOUT DOS COMPUTADORES */
 	for(var currentSize in sizeRooms){ /* FAZ UM LOOP PELOS TAMANHOS DE SALA */
-		sizeRooms[currentSize].forEach(room => { /* FAZ UM LOOP A PROCURA DA SALA */
-			if(room === target){ /* SE ACHOU A SALA */
+		sizeRooms[currentSize].forEach(currentRoom => { /* FAZ UM LOOP A PROCURA DA SALA */
+			if(currentRoom === targetRoom){ /* SE ACHOU A SALA */
 				var limit = 0;
 				currentSize === 'small' ? limit = 5 :
 				currentSize === 'medium' ? limit = 4 : limit = 2;			
@@ -47,33 +47,30 @@ function loadLayout(target) { /* FUNÇÃO QUE MODIFICA DINAMICAMENTE O LAYOUT DO
 	};
 };
 
-var floors = {
+const floors = {
 	floor3: [301,302, 303],
 	floor4: [401, 402, 404, 405, 406, 407, 408, 409, 411, 412]
 }
 
-/* CÓDIGO SELEÇÃO DE SALAS */
-function selectOptionCreate() {	
+function selectOptionCreate(targetFloor) { /* FUNÇÃO QUE CRIA AS OPÇÕES DE SALA, PARA CADA ESCOLHA DE ANDAR */
 
-	var val = document.getElementById("c1_Floor").value;
-	var select = document.getElementById('datalistOptionsRoom');
+	var dataList = document.getElementById('datalistOptionsRoom');
 	
-	/* var target = floor3;
-	if (val === '3º Andar') {
-		target = 0
-	} else {
-		target = 1
-	}; */
-
-	console.log(floors[0]);
-
-	floors[floor3].forEach(r => {
-		var opt = document.createElement('option');
-		opt.value = r;
-		opt.innerHTML = r;
-		select.appendChild(opt);
-	});
-		
+	if (targetFloor === '3º Andar') {
+		floors.floor3.forEach(floor => {
+			var option = document.createElement('option');
+			option.value = floor;
+			dataList.appendChild(option);
+		});
+	} else if (targetFloor === '4º Andar') {
+		floors.floor4.forEach(floor => {
+			var option = document.createElement('option');
+			option.value = floor;
+			dataList.appendChild(option);
+		});
+	} else { /* SE APAGOU A ESCOLHA DO ANDAR, APAGA A LISTA DE SALAS */
+		dataList.innerHTML = '';
+	};
 }
 
 form_1_next_btn.addEventListener("click", function(){
@@ -90,13 +87,11 @@ form_1_next_btn.addEventListener("click", function(){
 	4x4 - 4 ##### 402 
 	3x3 - 4 ##### 301, 302, 401
 	3x3 - 3 ##### 303, 404, 405, 406, 407, 408, 409, 411, 412
-	*/
+	*/	
+	
+	var targetR = parseInt(document.getElementById("c1_Room").value); /* parseInt converte o valor que é uma string, para integer */
 
-	/* const target = 402;	
-
-	loadLayout(target);
-
-	selectOptionCreate(target); */
+	loadLayout(targetR);
 
 	form_1.style.display = "none";
 	form_2.style.display = "block";

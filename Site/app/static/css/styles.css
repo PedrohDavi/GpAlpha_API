@@ -29,7 +29,6 @@ header {
 main {
   /* background: #dbdbdb;   */
   height: 85%; 
-  margin: 10% 0 -8% 0;
 }
 
 section {
@@ -299,13 +298,30 @@ textarea {
 
 /* Posicionamento botão home */
 .btn_home {
-  display: flex;
+  box-sizing: border-box;
+  position: relative;
+  top: -25rem;
+  width: 200px;
+}
+
+.btn_home h4 {
+  color: white;
+  font-weight: 100;
   justify-content: center;
 }
 
-/* Posicionamento botão home */
-.btn_home button {
-  box-sizing: border-box;
-  position: relative;
-  top: -15rem;
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin-left: 10px;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
 }

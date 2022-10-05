@@ -300,14 +300,16 @@ textarea {
 .btn_home {
   box-sizing: border-box;
   position: relative;
-  top: -25rem;
+  top: -24.5rem;
   width: 200px;
+  margin-left: 44%;
 }
 
-.btn_home h4 {
+.textreport {
   color: white;
-  font-weight: 100;
-  justify-content: center;
+  position: relative;
+  top: -24.5rem;
+  text-align: center;
 }
 
 .menu {
